@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "Seminar",
+			"path": "."
+		},
+		{
+			"name": "HTML-CSS-JS-Demo",
+			"path": "apps/html-css-js-demo"
+		},
+		{
+			"name": "React-Demo",
+			"path": "apps/react-demo/src"
+		}
+	],
+	"settings": {
+		"svg.preview.background": "transparent",
+		"liveServer.settings.multiRootWorkspaceName": "Seminar"
+	}
+}
