@@ -4,103 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" type="text/css" />
-    <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml" />
-    <title>1.2 | HTML Demo</title>
+    <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml">
+    <title>1 | HTML Demo</title>
   </head>
   <body>
     <main>
-      <h1>Beginner Steps to become a <span>Pro Frontend Engineer</span></h1>
-      <div>
-        <ul>
-          <li>
-            <span>1</span>
-            <input type="checkbox" name="Learn HTML" checked />
-            <label for="Learn HTML">Learn HTML</label>
-          </li>
-          <li>
-            <span>2</span>
-            <input type="checkbox" name="Learn CSS / SASS" checked />
-            <label for="Learn CSS / SASS">Learn CSS / SASS</label>
-          </li>
-          <li>
-            <span>3</span>
-            <input
-              type="checkbox"
-              name="JavaScript & DOM Manipulation"
-              checked
-            />
-            <label for="JavaScript & DOM Manipulation"
-              >JavaScript & DOM Manipulation</label
-            >
-          </li>
-          <li>
-            <span>4</span>
-            <input type="checkbox" name="Learn Version Control" checked />
-            <label for="Learn Version Control">Learn Version Control</label>
-          </li>
-          <li>
-            <span>5</span>
-            <input type="checkbox" name="Learn TypeScript" checked />
-            <label for="Learn TypeScript">Learn TypeScript</label>
-          </li>
-          <li>
-            <span>6</span>
-            <input type="checkbox" name="React Basics with Hooks" checked />
-            <label for="React Basics with Hooks">React Basics with Hooks</label>
-          </li>
-          <li>
-            <span>7</span>
-            <input type="checkbox" name="CSS / Styling Frameworks" checked />
-            <label for="CSS / Styling Frameworks"
-              >CSS / Styling Frameworks</label
-            >
-          </li>
-          <li>
-            <span>8</span>
-            <input type="checkbox" name="Redux Toolkit" checked />
-            <label for="Redux Toolkit">Redux Toolkit</label>
-          </li>
-          <li>
-            <span>9</span>
-            <input type="checkbox" name="SEO" checked />
-            <label for="SEO">SEO</label>
-          </li>
-          <li>
-            <span>10</span>
-            <input type="checkbox" name="Hosting" checked />
-            <label for="Hosting">Hosting</label>
-          </li>
-          <li>
-            <span>11</span>
-            <input type="checkbox" name="using BaaS" checked />
-            <label for="using BaaS">using BaaS</label>
-          </li>
-          <li>
-            <span>12</span>
-            <input type="checkbox" name="Web Security" />
-            <label for="Web Security">Web Security</label>
-          </li>
-          <li>
-            <span>13</span>
-            <input type="checkbox" name="Unit & Integration testing" />
-            <label for="Unit & Integration testing"
-              >Unit & Integration testing</label
-            >
-          </li>
-          <li>
-            <span>14</span>
-            <input type="checkbox" name="Building Mobile Apps" checked />
-            <label for="Building Mobile Apps">Building Mobile Apps</label>
-          </li>
-          <li>
-            <span>15</span>
-            <input type="checkbox" name="Building Desktop Apps" />
-            <label for="Building Desktop Apps">Building Desktop Apps</label>
-          </li>
-        </ul>
-      </div>
+      <h1>Counter app using HTML CSS JS</h1>
+
+      <span>1-step Counter</span>
+      <pre>0</pre>
+
+      <span>5-step Counter</span>
+      <pre>0</pre>
+
+      <button onclick="increaseCount()">Click to increase the count</button>
     </main>
 
-    <script></script>
+    <script>
+      function increaseCount() {
+        // 1. select the 1-STEP COUNTER
+        let step1CounterElement = document.getElementsByTagName('pre')[0];
+
+        // 2. get counter's current value
+        let count = step1CounterElement.textContent;
+
+        // 3. update counter with new value
+        step1CounterElement.textContent = ++count;
+
+        // REPEAT THE SAME FOR 5-STEP COUNTER
+        let step5counterElement = document.getElementsByTagName('pre')[1];
+        step5counterElement.textContent = count * 5;
+      }
+    </script>
   </body>
 </html>
