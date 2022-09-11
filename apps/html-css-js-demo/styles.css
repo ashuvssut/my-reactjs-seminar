@@ -1,89 +1,141 @@
+html,
 body {
+  box-sizing: border-box;
   margin: 0;
 }
+*:before {
+  box-sizing: inherit;
+}
+*:after {
+  box-sizing: inherit;
+}
 main {
-  color: white;
-  height: 100vh;
-  display: grid;
+  color: #001f3f;
   align-content: center;
   justify-content: center;
   text-align: center;
   font-family: monospace;
-  background-color: #21d4fd;
-  background-image: linear-gradient(
-    207deg,
-    #2af598,
-    #17cdc6,
-    #5fc3ff,
-    #009af7,
-    #17cdc6,
-    #2af598
-  );
+  background-color: #e0e0e0;
+  padding: 20px;
+  gap: 10px;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 h1 {
-  margin: 50px 0;
+  padding: 50px 0;
+  margin: 0;
+  font-size: 30px;
+}
+h1 > span {
+  display: block;
   font-size: 60px;
 }
-span {
-  font-size: 30px;
-  margin-top: 20px;
-}
-pre {
-  font-size: 50px;
-  margin: 10px;
-  color: #2af598;
-  font-weight: 800;
-  text-shadow: 2px 2px 4px #0000005e;
+
+div {
+  flex: 1;
 }
 
-button {
-  box-sizing: content-box;
-  padding: 20px 50px;
-  margin: 20px auto;
-  align-items: center;
-  appearance: none;
-  background-image: radial-gradient(
-    100% 100% at 100% 0,
-    #5adaff 0,
-    #5468ff 100%
-  );
-  border: 0;
-  border-radius: 15px;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: 'JetBrains Mono', monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
+ul {
+  max-width: 600px;
+  min-width: 505px;
+  margin: 0 auto;
   list-style: none;
-  overflow: hidden;
-  position: relative;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 50px);
+  grid-auto-flow: column;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  padding: 50px;
+  background: #e0e0e0;
+  box-shadow: -20px 20px 60px #bebebe, 20px -20px 60px #ffffff;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: auto;
+}
+@media (max-width: 710px) {
+  ul {
+    aspect-ratio: unset;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
+
+ul > li {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+li > span {
+  width: 20px;
+  margin-top: 3px;
+}
+
+li > input {
+  background: #e0e0e0;
+}
+
+li > label {
+  margin-left: 10px;
+  flex: 1;
   text-align: left;
-  text-decoration: none;
-  transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
+  font-size: 20px;
 }
 
-button:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+input[type='checkbox'] {
+  --active: #275efe;
+  --active-inner: #fff;
+  --focus: 2px rgba(39, 94, 254, 0.3);
+  --border: #bbc1e1;
+  --border-hover: #275efe;
+  --background: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 21px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid var(--bc, var(--border));
+  background: var(--b, var(--background));
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+  width: 21px;
+  border-radius: 7px;
 }
-
-button:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
+input[type='checkbox']:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+    opacity var(--d-o, 0.2s);
+  opacity: var(--o, 0);
+  width: 5px;
+  height: 9px;
+  border: 2px solid var(--active-inner);
+  border-top: 0;
+  border-left: 0;
+  left: 7px;
+  top: 4px;
+  transform: rotate(var(--r, 20deg));
 }
-
-button:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+input[type='checkbox']:checked {
+  --b: var(--active);
+  --bc: var(--active);
+  --d-o: 0.3s;
+  --d-t: 0.6s;
+  --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  --o: 1;
+  --r: 43deg;
+}
+input[type='checkbox']:focus {
+  box-shadow: 0 0 0 var(--focus);
 }
