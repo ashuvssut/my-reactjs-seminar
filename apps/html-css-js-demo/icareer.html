@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles-careerpath.css" type="text/css" />
+    <link rel="stylesheet" href="./styles-header.css" type="text/css" />
+    <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml" />
+    <title>HTML FInal Website</title>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">Counter app page</a>
+      <a href="./icareer.html" style="text-decoration: underline"
+        >Career path page</a
+      >
+    </header>
+    <div class="page">
+      <main>
+        <h1>Frontend Engineer Career path</h1>
+        <div>
+          <ul>
+            <li>
+              <span>1</span>
+              <input type="checkbox" name="Learn HTML" checked />
+              <label for="Learn HTML">Learn HTML</label>
+            </li>
+            <li>
+              <span>2</span>
+              <input type="checkbox" name="Learn CSS / SASS" checked />
+              <label for="Learn CSS / SASS">Learn CSS / SASS</label>
+            </li>
+            <li>
+              <span>3</span>
+              <input
+                type="checkbox"
+                name="JavaScript & DOM Manipulation"
+                checked
+              />
+              <label for="JavaScript & DOM Manipulation"
+                >JavaScript & DOM Manipulation</label
+              >
+            </li>
+            <li>
+              <span>4</span>
+              <input type="checkbox" name="Learn Version Control" checked />
+              <label for="Learn Version Control">Learn Version Control</label>
+            </li>
+            <li>
+              <span>5</span>
+              <input type="checkbox" name="Learn TypeScript" checked />
+              <label for="Learn TypeScript">Learn TypeScript</label>
+            </li>
+            <li>
+              <span>6</span>
+              <input type="checkbox" name="React Basics with Hooks" checked />
+              <label for="React Basics with Hooks"
+                >React Basics with Hooks</label
+              >
+            </li>
+            <li>
+              <span>7</span>
+              <input type="checkbox" name="Styling Frameworks" checked />
+              <label for="Styling Frameworks">Styling Frameworks</label>
+            </li>
+            <li>
+              <span>8</span>
+              <input type="checkbox" name="Redux Toolkit" checked />
+              <label for="Redux Toolkit">Redux Toolkit</label>
+            </li>
+            <li>
+              <span>9</span>
+              <input type="checkbox" name="SEO" checked />
+              <label for="SEO">SEO</label>
+            </li>
+            <li>
+              <span>10</span>
+              <input type="checkbox" name="Hosting" checked />
+              <label for="Hosting">Hosting</label>
+            </li>
+            <li>
+              <span>11</span>
+              <input type="checkbox" name="using BaaS" checked />
+              <label for="using BaaS">Using BaaS</label>
+            </li>
+            <li>
+              <span>12</span>
+              <input type="checkbox" name="Web Security" />
+              <label for="Web Security">Web Security</label>
+            </li>
+            <li>
+              <span>13</span>
+              <input type="checkbox" name="Unit & Integration testing" />
+              <label for="Unit & Integration testing"
+                >Unit & Integration testing</label
+              >
+            </li>
+            <li>
+              <span>14</span>
+              <input type="checkbox" name="Building Mobile Apps" checked />
+              <label for="Building Mobile Apps">Building Mobile Apps</label>
+            </li>
+            <li>
+              <span>15</span>
+              <input type="checkbox" name="Building Desktop Apps" />
+              <label for="Building Desktop Apps">Building Desktop Apps</label>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <centre id="loading"><div>Loading...</div></centre>
+
+    <script>
+      const wait = (delay = 0) =>
+        new Promise((resolve) => setTimeout(resolve, delay));
+
+      const setVisible = (elementOrSelector, visible) =>
+        ((typeof elementOrSelector === 'string'
+          ? document.querySelector(elementOrSelector)
+          : elementOrSelector
+        ).style.display = visible ? 'block' : 'none');
+
+      setVisible('.page', false);
+      setVisible('#loading', true);
+
+      document.addEventListener('DOMContentLoaded', () =>
+        wait(1000).then(() => {
+          setVisible('.page', true);
+          setVisible('#loading', false);
+        })
+      );
+    </script>
+  </body>
+</html>

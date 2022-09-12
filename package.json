@@ -1,17 +1,21 @@
 {
+  "homepage": ".",
   "name": "seminar",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve react-demo",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "s1": "serve -s /home/ashu/Desktop/seminar/dist/apps/react-demo",
+    "s2": "http-server /home/ashu/Desktop/seminar/apps/html-css-js-demo -p 1234"
   },
   "private": true,
   "dependencies": {
     "core-js": "^3.6.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "6",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.3.0"
   },

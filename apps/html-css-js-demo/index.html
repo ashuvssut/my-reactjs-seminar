@@ -3,36 +3,57 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" type="text/css" />
-    <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml">
-    <title>1 | HTML Demo</title>
+    <link rel="stylesheet" href="./styles-counter.css" type="text/css" />
+    <link rel="stylesheet" href="./styles-header.css" type="text/css" />
+    <link rel="icon" href="./favicon.svg" sizes="any" type="image/svg+xml" />
+    <title>HTML FInal Website</title>
   </head>
   <body>
-    <main>
-      <h1>Counter app using HTML CSS JS</h1>
+    <header>
+      <a href="./index.html" style="text-decoration: underline"
+        >Counter app page</a
+      >
+      <a href="./icareer.html">Career path page</a>
+    </header>
+    <span class="page">
+      <main>
+        <h1>Counter app using HTML CSS JS</h1>
 
-      <span>1-step Counter</span>
-      <pre>0</pre>
+        <span>1-step Counter</span>
+        <pre>0</pre>
 
-      <span>5-step Counter</span>
-      <pre>0</pre>
+        <span>5-step Counter</span>
+        <pre>0</pre>
 
-      <button onclick="increaseCount()">Click to increase the count</button>
-    </main>
+        <button onclick="increaseCount()">Click to increase the count</button>
+      </main>
+    </span>
+    <centre id="loading"><div>Loading...</div></centre>
 
     <script>
+      const wait = (delay = 0) =>
+        new Promise((resolve) => setTimeout(resolve, delay));
+
+      const setVisible = (elementOrSelector, visible) =>
+        ((typeof elementOrSelector === 'string'
+          ? document.querySelector(elementOrSelector)
+          : elementOrSelector
+        ).style.display = visible ? 'block' : 'none');
+
+      setVisible('.page', false);
+      setVisible('#loading', true);
+
+      document.addEventListener('DOMContentLoaded', () =>
+        wait(1000).then(() => {
+          setVisible('.page', true);
+          setVisible('#loading', false);
+        })
+      );
       function increaseCount() {
-        // 1. select the 1-STEP COUNTER
         let step1CounterElement = document.getElementsByTagName('pre')[0];
-
-        // 2. get counter's current value
-        let count = step1CounterElement.textContent;
-
-        // 3. update counter with new value
-        step1CounterElement.textContent = ++count;
-
-        // REPEAT THE SAME FOR 5-STEP COUNTER
         let step5counterElement = document.getElementsByTagName('pre')[1];
+        let count = step1CounterElement.textContent;
+        step1CounterElement.textContent = ++count;
         step5counterElement.textContent = count * 5;
       }
     </script>

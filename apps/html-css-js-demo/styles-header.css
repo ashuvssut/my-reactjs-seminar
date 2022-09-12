@@ -1,0 +1,49 @@
+header {
+  backdrop-filter: blur(10px);
+  margin: 0px 4vw;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 10px;
+  align-items: center;
+  padding: 18px 43px;
+  justify-content: flex-start;
+  border-radius: 16px;
+  background: #eeea;
+  gap: 40px;
+}
+
+header a {
+  color: #001f3f;
+  font-family: monospace;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+#loading {
+  position: fixed;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+
+  font-family: monospace;
+  font-size: 60px;
+}
+#loading > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  display: none;
+}

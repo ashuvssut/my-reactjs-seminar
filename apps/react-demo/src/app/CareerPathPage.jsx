@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import './../../../html-css-js-demo/styles.css';
+import './../../../html-css-js-demo/styles-careerpath.css';
 
 export function CareerPathPage() {
   const [steps, setSteps] = useState({
@@ -9,7 +9,7 @@ export function CareerPathPage() {
     'Learn Version Control': true,
     'Learn TypeScript': true,
     'React Basics with Hooks': true,
-    'CSS / Styling Frameworks': true,
+    'Styling Frameworks': true,
     'Redux Toolkit': true,
     SEO: true,
     Hosting: true,
@@ -25,29 +25,29 @@ export function CareerPathPage() {
   }
 
   return (
-    <main>
-      <h1>
-        Beginner Steps to become a <span>Pro Frontend Engineer</span>
-      </h1>
-      <div>
-        <ul>
-          {Object.entries(steps).map(([step, islearned], i) => {
-            return (
-              <li key={i}>
-                <span>{i + 1}</span>
-                <input
-                  type="checkbox"
-                  name={step}
-                  checked={islearned}
-                  onChange={updateSteps}
-                />
-                <label htmlFor={step}>{step}</label>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </main>
+    <div>
+      <main>
+        <h1>Frontend Engineer Career path</h1>
+        <div>
+          <ul>
+            {Object.entries(steps).map(([step, islearned], i) => {
+              return (
+                <li key={i}>
+                  <span>{i + 1}</span>
+                  <input
+                    type="checkbox"
+                    name={step}
+                    checked={islearned}
+                    onChange={updateSteps}
+                  />
+                  <label htmlFor={step}>{step}</label>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </main>
+    </div>
   );
 }
 
